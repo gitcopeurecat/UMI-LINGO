@@ -1,295 +1,1285 @@
 <!DOCTYPE html>
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
+
     <title>UMI-LINGO</title>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Tipografía -->
+    <meta name="description"
+          content="UMI-LINGO – Universal Manipulation Interface Leveraging Language for Guided Operations.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="UMILingo_Black_text.png">
+    <link rel="apple-touch-icon" href="UMILingo_Black_text.png">
+
+    <!-- Typography -->
     <link href="https://fonts.cdnfonts.com/css/today-sans" rel="stylesheet">
 
     <style>
-        /* ===== GLOBAL STYLES ===== */
+
+        /* ============================================================
+           GLOBAL
+        ============================================================ */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             margin: 0;
             padding: 0;
             font-family: 'Today Sans', Arial, Helvetica, sans-serif;
-            line-height: 1.5;
+            line-height: 1.6;
             background-color: #f5f7fa;
             color: #222;
         }
 
-        section {
-            max-width: 1140px;
-            margin: 0 auto;
-            padding: 40px 40px; /* compactado vertical y lateral */
-        }
-
-        h1 {
-            text-align: center;
-            font-size: 2.8em;
-            margin: 0 0 10px 0;
-            color: #662483; /* Color corporativo Eurecat */
-        }
-
-        h2 {
-            text-align: center;
-            font-weight: normal;
-            color: #555;
-            margin: 0 0 20px 0;
-            font-size: 1.3em;
-        }
-
-        h3 {
-            margin: 30px 0 10px 0;
-            border-bottom: 1.5px solid #ddd;
-            padding-bottom: 5px;
-            font-size: 1.5em;
-        }
-
-        h4 {
-            font-weight: normal;
-            color: #444;
-            margin: 10px 0;
-        }
-
-        p {
-            text-align: justify;
-            margin: 0 0 10px 0;
+        img {
+            max-width: 100%;
         }
 
         a {
-            color: #1a73e8;
+            color: #662483;
             text-decoration: none;
         }
 
-        /* ===== HEADER LOGOS ===== */
-        .header-logos {
-            display: flex;
-            justify-content: space-between;
+        a:hover {
+            text-decoration: underline;
+        }
+
+
+        /* ============================================================
+           HERO / HEADER
+        ============================================================ */
+
+        .hero {
+            background: #ffffff;
+            padding: 30px 5%;
+            box-shadow: 0 3px 14px rgba(0, 0, 0, 0.07);
+        }
+
+        .hero-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+
+            display: grid;
+            grid-template-columns: 260px 1fr;
+            gap: 40px;
+
             align-items: center;
-            padding: 15px 5%;
-            background: white;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
 
-        .header-logos img {
-            max-height: 100px;
-            width: auto;
+        .hero-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        /* ===== TEAM GRID ===== */
+        .hero-logo img {
+            width: 235px;
+            max-height: 235px;
+            object-fit: contain;
+        }
+
+        .hero-main {
+            width: 100%;
+        }
+
+        .hero-title-box,
+        .hero-subtitle-box {
+            background: #f2f3f6;
+            padding: 14px 25px;
+        }
+
+        .hero-title-box {
+            max-width: 650px;
+            margin: 0 auto 10px auto;
+        }
+
+        .hero-subtitle-box {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            margin: 0;
+            text-align: center;
+            font-size: clamp(2.3rem, 5vw, 4rem);
+            line-height: 1.1;
+            color: #662483;
+            letter-spacing: 0.5px;
+        }
+
+        .hero h2 {
+            margin: 0;
+            text-align: center;
+            font-size: clamp(1.15rem, 2.2vw, 1.8rem);
+            line-height: 1.35;
+            font-weight: normal;
+            color: #4b4b4b;
+        }
+
+
+        /* Partner logos in header */
+
+        .hero-partners {
+            margin-top: 25px;
+
+            display: grid;
+            grid-template-columns: repeat(4, minmax(120px, 1fr));
+            gap: 25px;
+
+            align-items: center;
+        }
+
+        .partner-logo {
+            height: 75px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .partner-logo img {
+            max-height: 58px;
+            max-width: 190px;
+            object-fit: contain;
+        }
+
+        .partner-logo.eurecat img {
+            max-height: 48px;
+        }
+
+        .partner-logo.hucebot img {
+            max-height: 55px;
+        }
+
+        .partner-logo.eu img {
+            max-height: 62px;
+        }
+
+        .partner-logo.eurobin img {
+            max-height: 65px;
+        }
+
+
+        /* ============================================================
+           SECTIONS
+        ============================================================ */
+
+        section {
+            max-width: 1180px;
+            margin: 28px auto;
+            padding: 38px 42px;
+
+            background: #ffffff;
+            border-radius: 18px;
+
+            box-shadow:
+                0 4px 18px rgba(24, 32, 56, 0.055);
+        }
+
+        h3 {
+            margin: 0 0 22px 0;
+            padding-bottom: 9px;
+
+            border-bottom: 2px solid #e7dbea;
+
+            font-size: 1.65rem;
+            color: #262626;
+        }
+
+        h4 {
+            margin: 10px 0 15px 0;
+            font-size: 1.15rem;
+            font-weight: normal;
+            color: #444;
+        }
+
+        p {
+            margin: 0 0 14px 0;
+            text-align: left;
+        }
+
+        .section-intro {
+            font-size: 1.05rem;
+            margin-bottom: 25px;
+        }
+
+
+        /* ============================================================
+           GIF DEMOS
+        ============================================================ */
+
+        .demo-section {
+            background: transparent;
+            box-shadow: none;
+            padding-top: 12px;
+            padding-bottom: 5px;
+        }
+
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 14px;
+        }
+
+        .demo-card {
+            margin: 0;
+
+            background: #ffffff;
+            border-radius: 14px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 4px 16px rgba(0, 0, 0, 0.10);
+        }
+
+        .demo-card img {
+            display: block;
+
+            width: 100%;
+            aspect-ratio: 16 / 9;
+
+            object-fit: cover;
+        }
+
+
+        /* ============================================================
+           DATASET / CODEBASE
+        ============================================================ */
+
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 22px;
+        }
+
+        .resource-card {
+            min-height: 125px;
+
+            display: grid;
+            grid-template-columns: 65px 1fr 30px;
+            gap: 18px;
+
+            align-items: center;
+
+            padding: 22px;
+
+            background: #f7f3f9;
+
+            border: 1px solid #eadfed;
+            border-radius: 16px;
+
+            color: #222;
+
+            transition:
+                transform 0.2s ease,
+                box-shadow 0.2s ease,
+                border-color 0.2s ease;
+        }
+
+        .resource-card:hover {
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 8px 20px rgba(102, 36, 131, 0.12);
+
+            border-color: #c9a9d5;
+            text-decoration: none;
+        }
+
+        .resource-icon {
+            width: 60px;
+            height: 60px;
+
+            border-radius: 50%;
+
+            background: #662483;
+            color: white;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .resource-icon svg {
+            width: 31px;
+            height: 31px;
+        }
+
+        .resource-card strong {
+            display: block;
+
+            margin-bottom: 3px;
+
+            color: #662483;
+            font-size: 1.2rem;
+        }
+
+        .resource-card small {
+            font-size: 0.92rem;
+            color: #555;
+        }
+
+        .resource-arrow {
+            font-size: 1.5rem;
+            color: #662483;
+        }
+
+
+        /* ============================================================
+           TEAM
+        ============================================================ */
+
         .team-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 20px; /* más compacto */
-            text-align: center;
+            gap: 20px;
+
             margin-top: 20px;
+            text-align: center;
         }
 
-        @media (max-width: 900px) {
-            .team-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
+        .team-member {
+            padding: 20px 12px;
 
-        @media (max-width: 600px) {
-            .team-grid {
-                grid-template-columns: 1fr;
-            }
+            background: #f8f9fb;
+            border-radius: 15px;
         }
 
         .team-member img {
             width: 120px;
             height: 120px;
+
             object-fit: cover;
+
             border-radius: 50%;
-            margin-bottom: 5px;
             border: 2px solid #ddd;
+
+            margin-bottom: 8px;
         }
 
         .team-member a {
             font-weight: bold;
-            font-size: 0.9em;
+            font-size: 0.9rem;
         }
 
-        /* ===== ACKNOWLEDGEMENTS ===== */
+        .affiliations {
+            margin-top: 35px;
+            padding-top: 18px;
+
+            border-top: 1px solid #eee;
+
+            font-size: 0.95rem;
+        }
+
+
+        /* ============================================================
+           TECHNICAL CONTENT
+        ============================================================ */
+
+        .split-layout {
+            display: grid;
+            grid-template-columns: minmax(0, 1.25fr) minmax(300px, 0.75fr);
+            gap: 42px;
+
+            align-items: start;
+        }
+
+        .feature-heading {
+            margin: 0 0 15px 0;
+
+            color: #662483;
+
+            font-size: 1.4rem;
+            font-weight: bold;
+        }
+
+        .feature-list {
+            margin: 20px 0 0 0;
+            padding-left: 23px;
+        }
+
+        .feature-list li {
+            margin-bottom: 17px;
+            padding-left: 4px;
+        }
+
+        .feature-list strong {
+            color: #343434;
+        }
+
+        figure {
+            margin: 0;
+        }
+
+        .technical-image {
+            padding: 12px;
+
+            background: #f8f9fb;
+            border-radius: 16px;
+        }
+
+        .technical-image img {
+            display: block;
+            width: 100%;
+
+            border-radius: 10px;
+        }
+
+        figcaption {
+            padding: 12px 8px 3px 8px;
+
+            color: #555;
+
+            font-size: 0.88rem;
+            line-height: 1.4;
+
+            text-align: center;
+        }
+
+
+        /* ============================================================
+           ACKNOWLEDGEMENTS
+        ============================================================ */
+
         .ack-logos {
             display: flex;
             justify-content: center;
-            gap: 30px; /* más compacto */
             align-items: center;
-            margin: 15px 0;
+
+            gap: 50px;
+
+            margin: 20px 0 28px 0;
+
             flex-wrap: wrap;
         }
 
         .ack-logos img {
-            max-height: 60px;
+            max-height: 65px;
+            max-width: 220px;
         }
 
-        /* ===== CONTACT & FOOTER ===== */
+
+        /* ============================================================
+           CONTACT + FOOTER
+        ============================================================ */
+
         .contact {
             text-align: center;
-            font-size: 1em;
-            margin-top: 15px;
+            font-size: 1rem;
         }
 
         footer {
+            margin-top: 35px;
+            padding: 20px;
+
             background: #222;
-            color: white;
+
+            color: #ffffff;
+
             text-align: center;
-            padding: 15px;
-            margin-top: 30px;
-            font-size: 0.95em;
+            font-size: 0.95rem;
         }
+
+
+        /* ============================================================
+           RESPONSIVE
+        ============================================================ */
+
+        @media (max-width: 1000px) {
+
+            .hero-inner {
+                grid-template-columns: 200px 1fr;
+                gap: 25px;
+            }
+
+            .hero-logo img {
+                width: 190px;
+            }
+
+            .demo-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero-partners {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .split-layout {
+                grid-template-columns: 1fr 1fr;
+                gap: 28px;
+            }
+        }
+
+
+        @media (max-width: 750px) {
+
+            .hero {
+                padding: 25px 20px;
+            }
+
+            .hero-inner {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-logo img {
+                width: 170px;
+            }
+
+            .hero-title-box,
+            .hero-subtitle-box {
+                padding: 12px 15px;
+            }
+
+            section {
+                margin: 20px 15px;
+                padding: 28px 22px;
+            }
+
+            .resource-grid,
+            .split-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+
+        @media (max-width: 520px) {
+
+            .demo-grid,
+            .hero-partners,
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .partner-logo {
+                height: 65px;
+            }
+
+            .resource-card {
+                grid-template-columns: 55px 1fr 22px;
+                padding: 17px;
+            }
+
+            .resource-icon {
+                width: 52px;
+                height: 52px;
+            }
+        }
+
     </style>
 </head>
 
 
-
 <body>
 
-<!-- HEADER WITH LOGOS -->
-<div class="header-logos">
-    <img src="https://raw.githubusercontent.com/gitcopeurecat/UMI-LINGO/main/UMILingo_Black_text.png" 
-         alt="UMI-LINGO Logo">
 
-    <a href="https://www.eurecat.org/en" target="_blank">
-        <img src="https://raw.githubusercontent.com/gitcopeurecat/UMI-LINGO/main/Eurecat.png" 
-             alt="Eurecat Logo">
-    </a>
-</div>
+<!-- ============================================================
+     HEADER
+============================================================ -->
 
-    <!-- SECTION 2 -->
-    <section>
-        <h1>UMI-LINGO</h1>
-        <h2>Universal Manipulation Interface Leveraging Language for Guided Operations</h2>
-    </section>
+<header class="hero">
 
-    <!-- SECTION 3 -->
-    <section>
-        <h3>About the Project</h3>
-        <h4>Open access to a modular, multi-tool handheld gripper and a multimodal dataset for natural language-guided robot manipulation.</h4>
-        <p>
-        UMI-LINGO democratises robot learning by providing an open-source handheld gripper and a multimodal dataset from human demonstrations.
-        By integrating natural language instructions, visual inputs, and low-level sensor inputs, the project enables multimodal cost-effective
-        data collection, accelerating automation adoption across sectors, particularly for SMEs.
-        </p>
+    <div class="hero-inner">
 
-        <p>
-        In this sense, UMI-LINGO enables automatic skills implementation, eliminating manual programming and enhancing workflow autonomy.
-        Beyond euROBIN, this initiative benefits the entire EU industry by promoting dataset reusability, lowering R&D barriers,
-        and enhancing collaboration. To maximise accessibility, the project provides video tutorials on gripper assembly,
-        data capture and model training, empowering SMEs and non-expert users to deploy robotic solutions independently and affordably.
-        </p>
+        <div class="hero-logo">
 
-        <p>
-        UMI-LINGO is an initiative selected by the 
-        <a href="https://www.eurobin-project.eu/index.php/showroom/news/155-report-applications-eurobin-3rd-open-call-for-technology-exchange-programme-and-1st-open-call-for-collaborative-projects" target="_blank">
-        3rd Open Call
-        </a>
-        “Creation of manipulation tasks dataset with vision and language instructions on tech exchange and collaborative projects on robotics and AI”,
-        boosted by the <a href="https://www.eurobin-project.eu/" target="_blank">euROBIN project</a>.
-        </p>
+            <img src="UMILingo_Black_text.png"
+                 alt="UMI-LINGO logo">
 
-        <p>
-        This project has been executed by 
-        <a href="https://eurecat.org/en/field-of-knowledge/robotics-automation/" target="_blank">
-        Eurecat’s Robotics and Automation Unit</a>, with mentoring from 
-        <a href="https://www.inria.fr/en/hucebot" target="_blank">
-        HUCEBOT research group (INRIA)</a>,
-        and it will be showcased in a household environment.
-        </p>
-    </section>
-    
-   <!-- SECTION 4 -->
-    <section>
-    <h3>Team</h3>
-
-    <div class="team-grid">
-
-        <!-- Row 1 -->
-        <div class="team-member">
-            <img src="https://raw.githubusercontent.com/gitcopeurecat/UMI-LINGO/main/Nestor_Garcia-EUT.png" alt="Néstor Garcia">
-            <div><strong>Néstor Garcia</strong><sup>1</sup></div>
-            <div><a href="https://orcid.org/0000-0003-3782-1745" target="_blank">ORCID</a></div>
         </div>
 
-        <div class="team-member">
-            <img src="https://raw.githubusercontent.com/gitcopeurecat/UMI-LINGO/main/Alberto_SanMiguel-EUT.png" alt="Alberto San Miguel">
-            <div><strong>Alberto San Miguel</strong><sup>1</sup></div>
-            <div><a href="https://orcid.org/0000-0001-5547-2564" target="_blank">ORCID</a></div>
-        </div>
 
-        <div class="team-member">
-            <img src="https://raw.githubusercontent.com/gitcopeurecat/UMI-LINGO/main/Mario_Cavero-EUT.png" alt="Mario Cavero">
-            <div><strong>Mario Cavero</strong><sup>1</sup></div>
-            <div><a href="https://orcid.org/0009-0008-5877-4283" target="_blank">ORCID</a></div>
-        </div>
+        <div class="hero-main">
 
-        <!-- Row 2 -->
-        <div class="team-member">
-            <img src="https://raw.githubusercontent.com/gitcopeurecat/UMI-LINGO/main/Alejandro_Gonzalez-EUT.png" alt="Alejandro González">
-            <div><strong>Alejandro González</strong><sup>1</sup></div>
-            <div><a href="https://orcid.org/0009-0007-5270-6573" target="_blank">ORCID</a></div>
-        </div>
+            <div class="hero-title-box">
+                <h1>UMI-LINGO</h1>
+            </div>
 
-        <div class="team-member">
-            <img src="https://raw.githubusercontent.com/gitcopeurecat/UMI-LINGO/main/Simona_Neri-EUT.png" alt="Simona Neri">
-            <div><strong>Simona Neri</strong><sup>1</sup></div>
-            <div><a href="https://orcid.org/0000-0002-5303-5536" target="_blank">ORCID</a></div>
-        </div>
+            <div class="hero-subtitle-box">
+                <h2>
+                    Universal Manipulation Interface<br>
+                    Leveraging Language for Guided Operations
+                </h2>
+            </div>
 
-        <div class="team-member">
-            <img src="https://raw.githubusercontent.com/gitcopeurecat/UMI-LINGO/main/Sabin-Grube-TU-Darmstad.png" alt="Sabin Grube Doiz">
-            <div><strong>Sabin Grube Doiz</strong><sup>2</sup></div>
-            <div><a href="https://orcid.org/0009-0001-7083-1024" target="_blank">ORCID</a></div>
+
+            <div class="hero-partners">
+
+                <a class="partner-logo eurecat"
+                   href="https://www.eurecat.org/en"
+                   target="_blank"
+                   rel="noopener noreferrer">
+
+                    <img src="Eurecat.png"
+                         alt="Eurecat Technology Centre">
+
+                </a>
+
+
+                <a class="partner-logo hucebot"
+                   href="https://www.inria.fr/en/hucebot"
+                   target="_blank"
+                   rel="noopener noreferrer">
+
+                    <img src="HUCEBOT.png"
+                         alt="HUCEBOT Human Centered Robotics">
+
+                </a>
+
+
+                <div class="partner-logo eu">
+
+                    <img src="EN_FundedbytheEU_RGB_POS.png"
+                         alt="Funded by the European Union">
+
+                </div>
+
+
+                <a class="partner-logo eurobin"
+                   href="https://www.eurobin-project.eu/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+
+                    <img src="euROBIN_logo%20_payoff.png"
+                         alt="euROBIN">
+
+                </a>
+
+            </div>
+
         </div>
 
     </div>
 
-    <div style="margin-top: 40px; font-size: 0.95em;">
-        <p>
-            <sup>1</sup> <a href="https://eurecat.org/en/field-of-knowledge/robotics-automation/" target="_blank">
-            Eurecat Technology Center – Robotics and Automation
-            </a><br>
-            <sup>2</sup> <a href="https://www.ias.informatik.tu-darmstadt.de/Team/SabinGrubeDoiz" target="_blank">
-            TU Darmstadt – Intelligent Autonomous Systems Lab
-            </a>
-        </p>
+</header>
+
+
+
+<!-- ============================================================
+     DEMONSTRATIONS
+============================================================ -->
+
+<section class="demo-section">
+
+    <div class="demo-grid">
+
+        <figure class="demo-card">
+            <img
+                src="demo_olles_al_foc_horitzontal.gif"
+                alt="UMI-LINGO manipulation demonstration placing pots on the stove"
+                loading="lazy">
+        </figure>
+
+        <figure class="demo-card">
+            <img
+                src="demo_olles_a_la_pica_horitzontal.gif"
+                alt="UMI-LINGO manipulation demonstration moving pots to the sink"
+                loading="lazy">
+        </figure>
+
+        <figure class="demo-card">
+            <img
+                src="demo_gots_rentavaixelles_horitzontal.gif"
+                alt="UMI-LINGO manipulation demonstration placing glasses in the dishwasher"
+                loading="lazy">
+        </figure>
+
+        <figure class="demo-card">
+            <img
+                src="demo_esmorzar_horitzontal.gif"
+                alt="UMI-LINGO manipulation demonstration preparing breakfast"
+                loading="lazy">
+        </figure>
+
     </div>
+
 </section>
 
 
-    <!-- SECTION 5 -->
-    <section>
-        <h3>Acknowledgments</h3>
 
-      <div class="ack-logos">
-    <img src="https://raw.githubusercontent.com/gitcopeurecat/UMI-LINGO/main/EN_FundedbytheEU_RGB_POS.png" alt="Funded by the EU">
-    <img src="https://raw.githubusercontent.com/gitcopeurecat/UMI-LINGO/main/euROBIN_logo%20_payoff.png" alt="euROBIN Logo">
-</div>
+<!-- ============================================================
+     ABOUT
+============================================================ -->
+
+<section>
+
+    <h3>About the Project</h3>
+
+    <h4>
+        Open access to a modular, multi-tool handheld gripper and a multimodal
+        dataset for natural language-guided robot manipulation.
+    </h4>
+
+    <p>
+        UMI-LINGO democratises robot learning by providing an open-source
+        handheld gripper and a multimodal dataset from human demonstrations.
+        By integrating natural language instructions, visual inputs, and
+        low-level sensor inputs, the project enables multimodal cost-effective
+        data collection, accelerating automation adoption across sectors,
+        particularly for SMEs.
+    </p>
+
+    <p>
+        In this sense, UMI-LINGO enables automatic skills implementation,
+        eliminating manual programming and enhancing workflow autonomy.
+        Beyond euROBIN, this initiative benefits the entire EU industry by
+        promoting dataset reusability, lowering R&amp;D barriers, and enhancing
+        collaboration. To maximise accessibility, the project provides video
+        tutorials on gripper assembly, data capture and model training,
+        empowering SMEs and non-expert users to deploy robotic solutions
+        independently and affordably.
+    </p>
+
+    <p>
+        UMI-LINGO is an initiative selected by the
+
+        <a href="https://www.eurobin-project.eu/index.php/showroom/news/155-report-applications-eurobin-3rd-open-call-for-technology-exchange-programme-and-1st-open-call-for-collaborative-projects"
+           target="_blank"
+           rel="noopener noreferrer">
+            3rd Open Call
+        </a>
+
+        “Creation of manipulation tasks dataset with vision and language
+        instructions on tech exchange and collaborative projects on robotics
+        and AI”, boosted by the
+
+        <a href="https://www.eurobin-project.eu/"
+           target="_blank"
+           rel="noopener noreferrer">
+            euROBIN project
+        </a>.
+    </p>
+
+    <p>
+        This project has been executed by
+
+        <a href="https://eurecat.org/en/field-of-knowledge/robotics-automation/"
+           target="_blank"
+           rel="noopener noreferrer">
+            Eurecat’s Robotics and Automation Unit
+        </a>,
+
+        with mentoring from the
+
+        <a href="https://www.inria.fr/en/hucebot"
+           target="_blank"
+           rel="noopener noreferrer">
+            HUCEBOT research group (INRIA)
+        </a>,
+
+        and it will be showcased in a household environment.
+    </p>
+
+</section>
+
+
+
+<!-- ============================================================
+     DATASET AND CODEBASE
+============================================================ -->
+
+<section>
+
+    <h3>Dataset and Codebase</h3>
+
+    <div class="resource-grid">
+
+
+        <!-- DATASET -->
+
+        <a class="resource-card"
+           href="https://zenodo.org/records/20177789"
+           target="_blank"
+           rel="noopener noreferrer">
+
+            <span class="resource-icon">
+
+                <!-- Dataset icon -->
+                <svg viewBox="0 0 32 32"
+                     fill="none"
+                     stroke="currentColor"
+                     stroke-width="2"
+                     aria-hidden="true">
+
+                    <ellipse cx="16" cy="7" rx="10" ry="4"></ellipse>
+
+                    <path d="M6 7v8c0 2.2 4.5 4 10 4s10-1.8 10-4V7"></path>
+
+                    <path d="M6 15v8c0 2.2 4.5 4 10 4s10-1.8 10-4v-8"></path>
+
+                </svg>
+
+            </span>
+
+            <span>
+                <strong>Dataset</strong>
+                <small>
+                    Access the UMI-LINGO multimodal dataset on Zenodo
+                </small>
+            </span>
+
+            <span class="resource-arrow">↗</span>
+
+        </a>
+
+
+
+        <!-- CODEBASE -->
+
+        <a class="resource-card"
+           href="https://zenodo.org/records/20177667"
+           target="_blank"
+           rel="noopener noreferrer">
+
+            <span class="resource-icon">
+
+                <!-- Code icon -->
+                <svg viewBox="0 0 32 32"
+                     fill="none"
+                     stroke="currentColor"
+                     stroke-width="2.3"
+                     stroke-linecap="round"
+                     stroke-linejoin="round"
+                     aria-hidden="true">
+
+                    <polyline points="12,8 5,16 12,24"></polyline>
+
+                    <polyline points="20,8 27,16 20,24"></polyline>
+
+                    <line x1="18" y1="5" x2="14" y2="27"></line>
+
+                </svg>
+
+            </span>
+
+            <span>
+                <strong>Codebase</strong>
+                <small>
+                    Access the UMI-LINGO software and implementation resources
+                </small>
+            </span>
+
+            <span class="resource-arrow">↗</span>
+
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- ============================================================
+     TEAM
+============================================================ -->
+
+<section>
+
+    <h3>Team</h3>
+
+
+    <div class="team-grid">
+
+
+        <div class="team-member">
+
+            <img src="Nestor_Garcia-EUT.png"
+                 alt="Néstor Garcia">
+
+            <div>
+                <strong>Néstor Garcia</strong><sup>1</sup>
+            </div>
+
+            <div>
+                <a href="https://orcid.org/0000-0003-3782-1745"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    ORCID
+                </a>
+            </div>
+
+        </div>
+
+
+
+        <div class="team-member">
+
+            <img src="Alberto_SanMiguel-EUT.png"
+                 alt="Alberto San Miguel">
+
+            <div>
+                <strong>Alberto San Miguel</strong><sup>1</sup>
+            </div>
+
+            <div>
+                <a href="https://orcid.org/0000-0001-5547-2564"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    ORCID
+                </a>
+            </div>
+
+        </div>
+
+
+
+        <div class="team-member">
+
+            <img src="Mario_Cavero-EUT.png"
+                 alt="Mario Cavero">
+
+            <div>
+                <strong>Mario Cavero</strong><sup>1</sup>
+            </div>
+
+            <div>
+                <a href="https://orcid.org/0009-0008-5877-4283"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    ORCID
+                </a>
+            </div>
+
+        </div>
+
+
+
+        <div class="team-member">
+
+            <img src="Alejandro_Gonzalez-EUT.png"
+                 alt="Alejandro González">
+
+            <div>
+                <strong>Alejandro González</strong><sup>1</sup>
+            </div>
+
+            <div>
+                <a href="https://orcid.org/0009-0007-5270-6573"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    ORCID
+                </a>
+            </div>
+
+        </div>
+
+
+
+        <div class="team-member">
+
+            <img src="Simona_Neri-EUT.png"
+                 alt="Simona Neri">
+
+            <div>
+                <strong>Simona Neri</strong><sup>1</sup>
+            </div>
+
+            <div>
+                <a href="https://orcid.org/0000-0002-5303-5536"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    ORCID
+                </a>
+            </div>
+
+        </div>
+
+
+
+        <div class="team-member">
+
+            <img src="Sabin-Grube-TU-Darmstad.png"
+                 alt="Sabin Grube Doiz">
+
+            <div>
+                <strong>Sabin Grube Doiz</strong><sup>2</sup>
+            </div>
+
+            <div>
+                <a href="https://orcid.org/0009-0001-7083-1024"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    ORCID
+                </a>
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
+    <div class="affiliations">
 
         <p>
-        This work was funded by the European Union. Views and opinions expressed are however those of the author(s) only
-        and do not necessarily reflect those of the European Union or European Commission.
-        Neither the European Union nor the granting authority can be held responsible for them.
+
+            <sup>1</sup>
+
+            <a href="https://eurecat.org/en/field-of-knowledge/robotics-automation/"
+               target="_blank"
+               rel="noopener noreferrer">
+                Eurecat Technology Center – Robotics and Automation
+            </a>
+
+            <br>
+
+            <sup>2</sup>
+
+            <a href="https://www.ias.informatik.tu-darmstadt.de/Team/SabinGrubeDoiz"
+               target="_blank"
+               rel="noopener noreferrer">
+                TU Darmstadt – Intelligent Autonomous Systems Lab
+            </a>
+
         </p>
-    </section>
 
-    <!-- SECTION 6 -->
-    <section>
-        <h3>Contact</h3>
-        <div class="contact">
-            If you have any questions, please feel free to contact  
-            <a href="mailto:info@eurecat.org">info@eurecat.org</a>
+    </div>
+
+</section>
+
+
+
+<!-- ============================================================
+     TECHNICAL CONTRIBUTION
+============================================================ -->
+
+<section>
+
+    <h3>Technical contribution</h3>
+
+    <p class="section-intro">
+        The technical contribution of UMI-LINGO is two-fold:
+        (i) an improved UMI gripper for multimodal data acquisition compatible
+        with the ROS 2 ecosystem, and
+        (ii) a methodology to efficiently obtain short-horizon human
+        demonstrations.
+    </p>
+
+
+    <div class="split-layout">
+
+
+        <div>
+
+            <div class="feature-heading">
+                GenUMI gripper
+            </div>
+
+            <p>
+                The GenUMI (Generalizable UMI) device has been conceptualised
+                as an evolution of the original Universal Manipulation
+                Interface (UMI), introducing significant architectural changes
+                to enable real-time data synchronisation and sensor flexibility.
+            </p>
+
+
+            <ol class="feature-list">
+
+                <li>
+                    <strong>Onboard computation:</strong>
+                    Unlike the minimal original design, GenUMI integrates a
+                    Raspberry Pi and an ESP32 board. This allows direct
+                    interfacing with low-level sensors and onboard processing.
+                </li>
+
+
+                <li>
+                    <strong>ROS 2 compatibility:</strong>
+                    The device is fully integrated into the ROS 2
+                    (Robot Operating System) ecosystem. This ensures that data
+                    streams — including images, proprioception and audio —
+                    are synchronised and compatible with standard robotic
+                    middleware.
+                </li>
+
+
+                <li>
+                    <strong>Improved gripper state sensing:</strong>
+                    The vision-based trigger state estimation of the original
+                    UMI is replaced with a potentiometer-based physical trigger.
+                    This provides precise, latency-free continuous values for
+                    gripper aperture, improving the quality of the
+                    proprioceptive data.
+                </li>
+
+
+                <li>
+                    <strong>Video capture:</strong>
+                    The design integrates the default GoPro equipped with a
+                    fish-eye lens for high-fidelity, context-aware visual data,
+                    coupled with a video capture device to stream data directly
+                    to the onboard compute units.
+                </li>
+
+            </ol>
+
         </div>
-    </section>
 
-</div>
+
+
+        <figure class="technical-image">
+
+            <img src="umigriper.png"
+                 alt="Front and rear views of the GenUMI gripper">
+
+            <figcaption>
+                Front and rear pictures of the final design of the GenUMI
+                device, integrating all the components for capturing
+                proprioceptive, visual, pose and user inputs.
+            </figcaption>
+
+        </figure>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ============================================================
+     PUPPETEERING PROTOCOL
+============================================================ -->
+
+<section>
+
+    <h3>Puppeteering Protocol</h3>
+
+
+    <div class="split-layout">
+
+
+        <div>
+
+            <p>
+                The two-person puppeteering protocol aims at the acquisition
+                of demonstrations of atomic task-steps linked to language
+                descriptions using a gamified setup where a Master User
+                dictates the action to be performed by a Puppet User using
+                the GenUMI device.
+            </p>
+
+            <p>
+                It has been implemented into the pipeline through interfaces
+                for each user that set the process evolution, relying on a
+                desired final state of the scene containing available objects
+                in specific locations.
+            </p>
+
+            <p>
+                To foster diversity and avoid biases, this final state has
+                been generated using a Visual Language Model (VLM).
+            </p>
+
+            <p>
+                This setup has been validated through the generation of the
+
+                <a href="https://zenodo.org/records/20177789"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    available dataset on tasks for daily-life environments
+                </a>,
+
+                containing demonstrations acquired at both HUCEBOT (INRIA)
+                and Eurecat facilities.
+            </p>
+
+        </div>
+
+
+
+        <figure class="technical-image">
+
+            <img src="umilingo2.png"
+                 alt="Example of UMI-LINGO demo acquisition using the puppeteering protocol">
+
+            <figcaption>
+                Example of demo acquisition using the proposed Puppeteering
+                protocol.
+            </figcaption>
+
+        </figure>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ============================================================
+     ACKNOWLEDGEMENTS
+============================================================ -->
+
+<section>
+
+    <h3>Acknowledgments</h3>
+
+
+    <div class="ack-logos">
+
+        <img src="EN_FundedbytheEU_RGB_POS.png"
+             alt="Funded by the European Union">
+
+        <img src="euROBIN_logo%20_payoff.png"
+             alt="euROBIN">
+
+    </div>
+
+
+    <p>
+        This work was funded by the European Union.
+        Views and opinions expressed are however those of the author(s) only
+        and do not necessarily reflect those of the European Union or European
+        Commission. Neither the European Union nor the granting authority can
+        be held responsible for them.
+    </p>
+
+</section>
+
+
+
+<!-- ============================================================
+     CONTACT
+============================================================ -->
+
+<section>
+
+    <h3>Contact</h3>
+
+    <div class="contact">
+
+        If you have any questions, please feel free to contact
+
+        <a href="mailto:info@eurecat.org">
+            info@eurecat.org
+        </a>
+
+    </div>
+
+</section>
+
+
 
 <footer>
     © 2026 UMI-LINGO Project
 </footer>
 
+
 </body>
+
 </html>
