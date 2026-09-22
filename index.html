@@ -212,8 +212,7 @@
             max-width: 230px;
             max-height: 76px;
 
-            transform:
-                scale(1.18);
+            transform: scale(1.18);
 
             transform-origin: center;
         }
@@ -711,19 +710,34 @@
         ============================================================ */
 
         .gripper-model-layout {
+            display: grid;
+
+            grid-template-columns:
+                minmax(280px, 0.65fr)
+                minmax(0, 1.35fr);
+
+            gap: 42px;
+
+            align-items: center;
+        }
+
+
+        .model-resource-grid {
+            display: grid;
+
+            grid-template-columns: 1fr;
+
+            gap: 20px;
+        }
+
+
+        .model-resource-grid .resource-card {
             width: 100%;
         }
 
 
         .video-embed {
             width: 100%;
-            max-width: 900px;
-
-            margin:
-                0
-                auto
-                32px
-                auto;
 
             aspect-ratio: 16 / 9;
         }
@@ -736,25 +750,6 @@
             height: 100%;
 
             border: 0;
-        }
-
-
-        .model-resource-grid {
-            display: grid;
-
-            grid-template-columns:
-                repeat(2, minmax(0, 1fr));
-
-            gap: 22px;
-
-            max-width: 900px;
-
-            margin: 0 auto;
-        }
-
-
-        .model-resource-grid .resource-card {
-            width: 100%;
         }
 
 
@@ -1055,6 +1050,16 @@
             .resource-grid,
             .genumi-layout,
             .protocol-layout,
+            .gripper-model-layout {
+                grid-template-columns: 1fr;
+            }
+
+
+            /*
+            On mobile, video goes below the resource boxes,
+            preserving the desktop content order.
+            */
+
             .model-resource-grid {
                 grid-template-columns: 1fr;
             }
@@ -1903,23 +1908,7 @@
     <div class="gripper-model-layout">
 
 
-        <!-- YOUTUBE VIDEO -->
-
-        <div class="video-embed">
-
-            <iframe
-                src="https://www.youtube-nocookie.com/embed/pNMHjBHvlp8"
-                title="UMI-LINGO Gripper 3D model"
-                loading="lazy"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen>
-            </iframe>
-
-        </div>
-
-
-
-        <!-- RESOURCES -->
+        <!-- LEFT COLUMN: RESOURCES -->
 
         <div class="model-resource-grid">
 
@@ -2005,11 +1994,15 @@
                         aria-hidden="true">
 
                         <path d="M10 6h16"></path>
+
                         <path d="M10 16h16"></path>
+
                         <path d="M10 26h16"></path>
 
                         <polyline points="3,6 5,8 8,4"></polyline>
+
                         <polyline points="3,16 5,18 8,14"></polyline>
+
                         <polyline points="3,26 5,28 8,24"></polyline>
 
                     </svg>
@@ -2039,6 +2032,23 @@
 
 
         </div>
+
+
+
+        <!-- RIGHT COLUMN: VIDEO -->
+
+        <div class="video-embed">
+
+            <iframe
+                src="https://www.youtube-nocookie.com/embed/pNMHjBHvlp8"
+                title="UMI-LINGO Gripper 3D model"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+
+        </div>
+
 
     </div>
 
@@ -2167,9 +2177,7 @@
         <div class="vertical-video-placeholder">
 
             <div class="placeholder-play">
-
                 ▶
-
             </div>
 
 
@@ -2191,9 +2199,7 @@
         <div class="vertical-video-placeholder">
 
             <div class="placeholder-play">
-
                 ▶
-
             </div>
 
 
@@ -2272,9 +2278,7 @@
         If you have any questions, please feel free to contact
 
         <a href="mailto:info@eurecat.org">
-
             info@eurecat.org
-
         </a>
 
     </div>
