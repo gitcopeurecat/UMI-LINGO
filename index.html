@@ -75,24 +75,33 @@
         }
 
 
+        /*
+           The third empty column balances the UMI-LINGO logo on the left.
+           This means the central content is geometrically centred on the
+           complete page rather than being displaced towards the right.
+        */
+
         .hero-inner {
-            max-width: 1280px;
+            max-width: 1360px;
 
             margin: 0 auto;
 
             display: grid;
 
             grid-template-columns:
-                260px
-                minmax(0, 1fr);
+                200px
+                minmax(0, 1fr)
+                200px;
 
-            gap: 40px;
+            gap: 20px;
 
             align-items: center;
         }
 
 
         .hero-logo {
+            grid-column: 1;
+
             display: flex;
 
             justify-content: center;
@@ -109,6 +118,8 @@
 
 
         .hero-main {
+            grid-column: 2;
+
             width: 100%;
         }
 
@@ -916,11 +927,23 @@
         @media (max-width: 1000px) {
 
             .hero-inner {
+                max-width: 1280px;
+
                 grid-template-columns:
                     200px
                     1fr;
 
                 gap: 25px;
+            }
+
+
+            .hero-logo {
+                grid-column: auto;
+            }
+
+
+            .hero-main {
+                grid-column: auto;
             }
 
 
@@ -1520,11 +1543,17 @@
                     stroke-linejoin="round"
                     aria-hidden="true">
 
-                    <path d="M16 3 27 9 16 15 5 9 16 3Z"></path>
+                    <path
+                        d="M16 3 27 9 16 15 5 9 16 3Z">
+                    </path>
 
-                    <path d="M5 9v13l11 7V15"></path>
+                    <path
+                        d="M5 9v13l11 7V15">
+                    </path>
 
-                    <path d="M27 9v13l-11 7"></path>
+                    <path
+                        d="M27 9v13l-11 7">
+                    </path>
 
                 </svg>
 
@@ -1574,16 +1603,20 @@
                     aria-hidden="true">
 
                     <path d="M10 6h16"></path>
-
                     <path d="M10 16h16"></path>
-
                     <path d="M10 26h16"></path>
 
-                    <polyline points="3,6 5,8 8,4"></polyline>
+                    <polyline
+                        points="3,6 5,8 8,4">
+                    </polyline>
 
-                    <polyline points="3,16 5,18 8,14"></polyline>
+                    <polyline
+                        points="3,16 5,18 8,14">
+                    </polyline>
 
-                    <polyline points="3,26 5,28 8,24"></polyline>
+                    <polyline
+                        points="3,26 5,28 8,24">
+                    </polyline>
 
                 </svg>
 
@@ -1681,7 +1714,7 @@
 
             <img
                 src="Mario_Cavero-EUT.png"
-                alt="Mario Cavero">
+                alt="Mario Cavero Vidal">
 
             <div class="team-name">
 
@@ -1690,7 +1723,7 @@
                     target="_blank"
                     rel="noopener noreferrer">
 
-                    Mario Cavero
+                    Mario Cavero Vidal
 
                 </a><sup>1</sup>
 
@@ -1982,7 +2015,9 @@
                 </div>
 
                 <figcaption>
+
                     Assembly process of the 3D-printed gripper
+
                 </figcaption>
 
             </figure>
@@ -2102,7 +2137,9 @@
     <div class="acquisition-intro">
 
         <p>
+
             These two videos showcase how the data acquisition process was carried out at both institutions:
+
         </p>
 
     </div>
@@ -2130,7 +2167,9 @@
 
 
             <figcaption>
+
                 Dataset acquisition at HUCEBOT (INRIA)
+
             </figcaption>
 
         </figure>
@@ -2155,7 +2194,9 @@
 
 
             <figcaption>
+
                 Dataset acquisition at Eurecat
+
             </figcaption>
 
         </figure>
@@ -2224,7 +2265,9 @@
         If you have any questions, please feel free to contact
 
         <a href="mailto:info@eurecat.org">
+
             info@eurecat.org
+
         </a>
 
     </div>
